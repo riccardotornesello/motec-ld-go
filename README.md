@@ -1,4 +1,4 @@
-# motec-ld-go
+# Motec LD Parser (Go)
 
 A Go library for reading and writing MoTeC LD (Logged Data) files.
 
@@ -30,12 +30,12 @@ package main
 import (
     "os"
     "time"
-    motec "github.com/riccardotornesello/motecldparser"
+    "github.com/riccardotornesello/motecldparser"
 )
 
 func main() {
     // Create a new LD file
-    file := motec.File{
+    file := motecldparser.File{
         Time:         time.Now(),
         Driver:       "John Doe",
         Vehicle:      "Race Car #42",
@@ -53,7 +53,7 @@ func main() {
     }
     
     // Create channels with data
-    speed := &motec.Channel[float32]{
+    speed := &motecldparser.Channel[float32]{
         Frequency: 100,
         Name:      "Speed",
         ShortName: "SPD",
@@ -61,7 +61,7 @@ func main() {
         Data:      &[]float32{0.0, 10.5, 25.3, 50.2, 75.8},
     }
     
-    rpm := &motec.Channel[int16]{
+    rpm := &motecldparser.Channel[int16]{
         Frequency: 100,
         Name:      "Engine RPM",
         ShortName: "RPM",
@@ -88,7 +88,7 @@ func main() {
 You can add data to channels incrementally:
 
 ```go
-channel := &motec.Channel[float32]{
+channel := &motecldparser.Channel[float32]{
     Frequency: 100,
     Name:      "Temperature",
     ShortName: "TEMP",

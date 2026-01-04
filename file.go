@@ -1,4 +1,4 @@
-// Package motec_ld_parser provides functionality for writing MoTeC LD (Logged Data) files.
+// Package motecldparser provides functionality for writing MoTeC LD (Logged Data) files.
 //
 // MoTeC LD files are binary files used by MoTeC data acquisition systems to store
 // telemetry data from racing vehicles. This package supports creating and writing
@@ -6,19 +6,19 @@
 //
 // Basic usage:
 //
-//	file := motec_ld_parser.File{
+//	file := motecldparser.File{
 //	    Time:    time.Now(),
 //	    Driver:  "Driver Name",
 //	    Vehicle: "Vehicle Name",
 //	}
-//	channel := &motec_ld_parser.Channel[float32]{
+//	channel := &motecldparser.Channel[float32]{
 //	    Frequency: 100,
 //	    Name:      "Speed",
 //	    Data:      &[]float32{0, 10, 20},
 //	}
 //	file.AddChannels(channel)
 //	file.Write(fileDescriptor)
-package motec_ld_parser
+package motecldparser
 
 import (
 	"bytes"
