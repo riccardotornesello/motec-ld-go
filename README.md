@@ -1,4 +1,4 @@
-# motec-ld-go
+# Motec LD Parser (GO)
 
 A Go library for reading and writing MoTeC LD (Logged Data) files.
 
